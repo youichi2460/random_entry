@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Redirect</title>
+  <script>
+    const urls = ["http://www.yahoo.co.jp","http://google.com"];
+    window.onload = function() {
+      const selected = urls[Math.floor(Math.random() * urls.length)];
+      window.location.href = selected;
+    };
+  </script>
+</head>
+<body>
+  <p>振り分け中です。自動で遷移しない場合は<a href="#" id="fallback">こちら</a>をクリックしてください。</p>
+  <script>
+    document.getElementById("fallback").href = urls[Math.floor(Math.random() * urls.length)];
+  </script>
+</body>
+</html>
